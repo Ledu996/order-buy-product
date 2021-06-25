@@ -1,0 +1,37 @@
+
+<%- include('partials/header.ejs') %>
+
+    <div class="main_section">
+        <div class="section__box" id="lista_proizvoda">
+            <ul>
+                <li><a href="#">Voce</a></li>
+                <li><a href="#">Povrce</a></li>
+                <li><a href="#">Meso</a></li>
+                <li><a href="#">Riba</a></li>
+                <li><a href="#">Grickalice</a></li>
+                <li><a href="#">Cokolade</a></li>
+                <li><a href="#">Pica</a></li>
+                <li><a href="#">Zdrava Hrana</a></li>
+                <li><a href="#">Pekara</a></li>
+            </ul>
+        </div>
+            <div class="section__box" id="proizvod_box">
+                <% data.forEach((currentValue, index, array) => {%>
+                    <div class="kategorija_box" id="Kategorija"><!--Ovde nastupa baza (id kategorije)-->
+                        <div class="box" id="proizvod_<%= currentValue.PROIZVOD_ID %>" >
+                            <h2>Kategorija</h2><!--Ovde nastupa baza (ime kategorije) -->
+                            <span> <%= currentValue.IME %> </span>
+                            <img src="#" alt="proizvod">
+                            <p style="font-weight: bold; font-size: 14px"> <%= currentValue.OPIS %> </p>
+                            <p class="cena"> <%= currentValue.CENA %> </p>
+                            <div class="crtica"></div>
+                            <button>Poruci</button>
+                        </div>
+                    </div>
+                <%});%>      
+            </div>
+    </div>
+</div>
+    <script src="app.js"></script>
+</body>
+</html>
