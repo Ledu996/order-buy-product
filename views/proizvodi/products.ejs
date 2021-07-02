@@ -1,0 +1,31 @@
+
+<%- include('../partials/header.ejs') %>
+
+    <div class="main_section">
+        <div class="section__box" id="lista_proizvoda">
+            <ul>
+                <li><a href="#">Voce</a></li>
+                <li><a href="#">Povrce</a></li>
+                <li><a href="#">Meso</a></li>
+                <li><a href="#">Riba</a></li>
+                <li><a href="#">Grickalice</a></li>
+                <li><a href="#">Cokolade</a></li>
+                <li><a href="#">Pica</a></li>
+                <li><a href="#">Zdrava Hrana</a></li>
+                <li><a href="#">Pekara</a></li>
+            </ul>
+        </div>
+            <div class="section__box" id="proizvod_box">
+                <%- include('proizvodList.ejs') %>      
+            </div>
+            
+            <div class = "section__box" id="prikaz_proizvod">
+                <div>
+                    <%# include('proizvod.ejs')%>
+                </div>
+            </div>
+    </div>
+</div>
+    <script src="app.js"></script>
+</body>
+</html>

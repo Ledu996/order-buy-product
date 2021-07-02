@@ -27,6 +27,7 @@
 #navigation {
     height: 100px;
     font-weight: 400;
+    background-color: #000;
 }
 
 #navigation ul {
@@ -40,11 +41,13 @@
     font-size: 16px;
     text-transform: uppercase;
     padding: 4px;
+    
 }
 
 
 #navigation ul li a {
     text-decoration: none;
+    color: #fff;
 }
 
 
@@ -52,7 +55,6 @@
     height: 50px;
     text-align: center;
     background-color: #000;
-    opacity: 0.5;
 }
 .porudzbina {
     display: inline-block;
@@ -69,23 +71,35 @@
     font-family: 'Benne', serif;
 }
 
+#za_poneti {
+    padding-left: 5px;
+}
+
 
 /*
     Sekcija
 */
-.section_box {
+.section__box {
     display: inline-block;
+    border: 1px solid #fff;
 }
 
 
-.box {
-    display: inline-block;
-    margin: 2px 5px;
+#lista_proizvoda {
+    width: 25%;
+}
+#lista_proizvoda ul li a {
+    text-decoration: none;
 }
 
-.box {
-    position: relative;
+#proizvod_box {
+    width: 50%;
+    height: 394px;
+    overflow-y: scroll;
+}
 
+.kategorija_box {
+    display: inline-block;
 }
 
 .crtica {

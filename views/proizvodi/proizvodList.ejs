@@ -1,0 +1,28 @@
+
+    
+<% proizvodi.forEach((currentValue) => { %>
+    <div class="kategorija_box" id="Kategorija"><!--Ovde nastupa baza (id kategorije)-->
+        <div class="box" id="proizvod_<%= currentValue.PROIZVOD_ID %>" >
+            <h2>Kategorija</h2><!--Ovde nastupa baza (ime kategorije) -->
+            <span> <%= currentValue.IME %> </span>
+            <img src="#" alt="proizvod">
+            <p style="font-weight: bold; font-size: 14px"> <%= currentValue.OPIS %> </p>
+            <p class="cena"> <%= currentValue.CENA %> </p>
+            <div class="crtica"></div>
+            <button>Poruci</button>
+        </div>
+    </div>
+<%})%>
+
+
+
+
+
+
+
+
+
+
+
+
+

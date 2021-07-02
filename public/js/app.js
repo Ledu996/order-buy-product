@@ -1,6 +1,7 @@
 //const Proizvod = require('../../model/proizvod')
 
 
+
 const nizProizvoda = Array.from(document.getElementsByClassName('box'));
 /*  
 nizProizvoda.forEach((element, index, array) => {
@@ -47,9 +48,9 @@ array.loopForEach((element) => { // chaining sa then u kolbekovima, svaki parame
     console.log(element);
 })
 
+let url = new URL(window.location.href);
 
-
-
+console.log(url.searchParams.set('name', 'Dusan'));
 //[{kategorijaID: 1, kategorija_IME: 'Voce', proizvod: "Proizvo_iME",}]
 
 
