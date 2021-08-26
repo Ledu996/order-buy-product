@@ -1,0 +1,23 @@
+
+    <%- include('../partials/header.ejs')%>
+        <% porudzbina.forEach(porudzbina => { %>
+        
+              <div style="border: 1px solid #000;">
+                <h3>Vasa Porudzbina</h3>
+                <p><%= 'ID proizvoda: ' + porudzbina.PROIZVOD_ID %></p>
+                <p><%= 'Vas Komentar: ' + porudzbina.KOMENTAR  %></p>
+                <p><%= 'Vreme Porudbine: ' + porudzbina.DATUM  %></p>
+                <button><a href=<%= '/proizvodi/' + porudzbina.PROIZVOD_ID %>>Detalji</a></button>
+            </div>
+         
+        
+            
+       <% })%>
+    
+    </div>
+</body>
+</html>
+
+            <%# info o korisniku (povezanost putem KORISNIK_ID) ime, email, phone%>
+            <%# proizvod (povezanost putem PROIZVOD_ID) ime proizvoda%>
+            <%# datum posiljke%>

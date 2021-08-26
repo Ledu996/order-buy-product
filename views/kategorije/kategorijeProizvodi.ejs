@@ -1,0 +1,42 @@
+<%- include('../partials/header.ejs')%>
+
+    <div>
+            <h1>
+                <%=kategorije%>
+            </h1>
+
+            <%proizvodi.forEach((proizvod) => { %>
+                <div class="kategorije_kategorijeProizvodi">
+                    <h3><%=proizvod.IME%></h3>
+                    <div>
+                        <img src="<%=proizvod.ADRESA_SLIKE%>" alt="<%=proizvod.IME%>">
+                    </div>
+                    <p><%= proizvod.OPIS%></p>
+                    <p><%= proizvod.CENA%></p>
+                    <button>
+                        <%
+                        switch (prijava) {
+                            case 'Prijavi se': %>
+                                <a href="/auth/login/">Prijava</a>
+                            <% break;
+                            
+                            case 'Odjavi se' : %>
+                            <a href="/porudzbine/create/<%=proizvod.PROIZVOD_ID%>">Naruci</a>
+                            <% break;
+                            default: %>
+                            <a href="/auth/login">Prijava</a>
+                            <% break;
+                        }%>
+                    
+                    
+                    </button>
+                </div>
+
+                <%console.log(prijava)%>
+            <% })%>
+        
+    </div>
+
+</div>
+</body>
+</html>

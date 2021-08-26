@@ -1,0 +1,17 @@
+<%- include('../partials/header.ejs')%>
+    <form method="post" class="forme" id="porudzbina_forma">
+        <div class="okvir_inputa">
+            <%console.log(data.PROIZVOD_ID)%>
+            <div><input type="text" value="<%=kategorijaNaziv%>" readonly/></div>
+            <div><input type="number" value="<%= data.PROIZVOD_ID %>" id="proizvod_id" name="proizvodId"  readonly/></div><!--Select tag-->
+            <div><input type="text" value="<%= data.IME%>" readonly/></div>
+            <div><input type="text" id="komentar" name="komentar" placeholder="Opis"/></div>
+            <p><%= data.CENA + ' din'%></p>
+            <button type="submit">Naruci</button>
+        </div>
+        
+        
+    </form>
+</div>
+</body>
+</html>

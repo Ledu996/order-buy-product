@@ -10,20 +10,35 @@
 
 </head>
 <body>
-    <div id="main_container">
+    <div id="container">
         <header>
-            <div id="header_container">
-                <div id="navigation">
-                    <ul>
-                        <% nav.forEach(element => { %>
-                            <li><a href="#"><%= element %></a></li>
-                        <% }); %>
-                    </ul>
-                </div>
-                
-                <div id="porudzbina_box">
-                    <div class="porudzbina" id="dostava"><i class="fas fa-car-side"></i></i>Dostava</div>
-                    <div class="porudzbina" id="za_poneti">Za Poneti</div>
-                </div>
-            </div>   
+                <ul>
+                    <li class="menu"><a href="/">Home</a></li>
+                    <li class="menu">
+                        <a href="/proizvodi">KategorijeProizvoda</a>
+                        <ul class="ani-menu">
+                            <li><a href="/proizvodi/kategorija/1">Voce</a></li>
+                            <li><a href="/proizvodi/kategorija/2">Povrce</a></li>
+                            <li><a href="/proizvodi/kategorija/3">Meso</a></li>
+                            <li><a href="/proizvodi/kategorija/4">Riba</a></li>
+                            <li><a href="/proizvodi/kategorija/5">Grickalice</a></li>
+                            <li><a href="/proizvodi/kategorija/6">Cokolade</a></li>
+                            <li><a href="/proizvodi/kategorija/7">Pica</a></li>
+                            <li><a href="/proizvodi/kategorija/8">Zdrava Hrana</a></li>
+                            <li><a href="/proizvodi/kategorija/9">Pekara</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu" id="prijava" >
+                        
+
+                        </li>
+                    <li class="menu" id="porudzbina"><a href="/porudzbine">Moje Porudzbine</a></li>
+                </ul>
+                <h2><%= naslov %></h2>
         </header>
+
+    <div id="main_container">
+        
+
+
+

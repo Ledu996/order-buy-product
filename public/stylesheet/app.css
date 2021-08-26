@@ -6,116 +6,162 @@
     margin: 0;
     padding: 0;
     font-family: 'Benne', serif;
-    color: rgb(255, 255, 255, 0.7)
+    color: #fff;
 }
 
-
-
-.main_section {
-    position: relative;
-    /*background-image: url(../images/bread.jpg);*/
-    background: #000;
-    background-size: cover;
-
+html, body {
+    height: 100%;
+    /*background-color: antiquewhite;*/
 }
-
-
-#header_container {
-    /*background: linear-gradient(right left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.0));*/
-    border-bottom: 1px solid rgb(255, 255, 255, 0.5);
-}
-#navigation {
-    height: 100px;
-    font-weight: 400;
+.body_Voce {
     background-color: #000;
 }
 
-#navigation ul {
+
+#container {
+    height: 100%;
+    /*border: 2px solid #000;*/
+    position: relative;
+    z-index: 0;
+    background-color: antiquewhite;
+    /*background-image: url('../images/roman-kraft-P8zDQz8Y2Vc-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow-y: scroll;*/
+}
+
+
+header {
+    height: 10%;
+    background-color: #000; ; /*antiquewhite*/
+}
+
+header h2 {
+    color: #fff;
+}
+
+header ul, header ul li{
+    list-style: none;
+    display: inline-block
+}
+
+header ul {
     float: right;
-    padding-right: 5px;
-    list-style-type: none;
+    padding-right: 15px;
+    padding-top: 5px;
 }
 
-#navigation ul li {
-    display: inline-block;
-    font-size: 16px;
-    text-transform: uppercase;
-    padding: 4px;
-    
+.menu {
+    position: relative;
+    padding: 0 4px;
+}
+
+.ani-menu {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    transform: translateY(-3em);
+    z-index: -1;
+    transition: all 0.3s ease 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
 }
 
 
-#navigation ul li a {
+.menu:focus .ani-menu, 
+.menu:focus-within .ani-menu,
+.menu:hover .ani-menu {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0);
+    transition-delay: 0s, 0s, 0.3s ;
+    background-color: #000;
+}
+
+.ani-menu li {
+    display: block;
+}
+
+.ani-menu a {
+    width: 100%;
+    text-align: center;
+    margin-left: 4px;
+    padding: 0 5px 0 0;
+}
+
+.ani-menu a:hover {
+    background-color: #000; 
+    border: 3px solid #fff;
+    color: #fff;
+}
+
+header a {
+    display: block;
     text-decoration: none;
     color: #fff;
-}
-
-
-#porudzbina_box {
-    height: 50px;
-    text-align: center;
-    background-color: #000;
-}
-.porudzbina {
-    display: inline-block;
-    color: #fff;
     font-size: 18px;
-    text-transform: uppercase;
-}
-#dostava {
-    border-right: 2px solid #fff;
-    padding-top: 10px;
-    padding-right: 5px;
-    height: 50px;
-    font-weight: bold;
-    font-family: 'Benne', serif;
 }
 
-#za_poneti {
-    padding-left: 5px;
+
+#main_container {
+    height: 100%;
+    position: relative;
 }
+
+
+/*Kategorije proizvoda*/
+
+.kategorije_kategorijeProizvodi {
+    display: inline-block;
+    border: 1px solid #000;
+    width: 10%;
+    height: 20%;
+    padding: 0;
+    text-align: center;
+}
+
+/*
+    Produkti
+*/
+
+.content-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+
+
 
 
 /*
-    Sekcija
+    Forme
 */
-.section__box {
-    display: inline-block;
-    border: 1px solid #fff;
-}
 
 
-#lista_proizvoda {
-    width: 25%;
-}
-#lista_proizvoda ul li a {
-    text-decoration: none;
-}
-
-#proizvod_box {
+.forme {
+    border: 1px solid #000;
     width: 50%;
-    height: 394px;
-    overflow-y: scroll;
+    height: 50%;
+    text-align: center;
+    margin-left: 25%;
+    margin-top: 5%;
 }
 
-.kategorija_box {
-    display: inline-block;
+.forme .okvir_inputa {
+    margin-top: 15%;
+    border: 1px solid #000;
 }
 
-.crtica {
-    width: 101px;
-    height: 2px;
-    background-color: #fff;
-}
-
-.box button {
-    position: absolute;
-    z-index: 2;
-    bottom: 0px;
-    display: none;
+.forme div input {
+    text-align: center;
+    margin-top: 5px;
+    color: #000;
 }
 
 
-.box:hover button {
-    display: block;
-}
+
+
+

@@ -6,6 +6,11 @@ const session = require('express-session');
 const Proizvod = require('./model/proizvod');
 const proizvodRoutes = require('./routes/ProizvodRoutes');
 const korisnikRoutes = require('./routes/KorisnikRoutes');
+const porudzbineRoutes = require('./routes/PorudzbinaRoutes')
+const authRoutes = require('./routes/AuthRoutes');
+const adminRoutes = require('./routes/AdminRoutes');
+const indexRoutes = require('./routes/IndexRoutes');
+const cors = require('cors');
 const app = express();
 require('dotenv').config()
 
@@ -14,6 +19,8 @@ app.set('views', 'views');
 
 app.use(bodyParser.urlencoded({extended: true}));
 
+//statika
+app.use(express.static(path.join(__dirname, '/public/pages')));
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.static(path.join(__dirname, '/public/js')));
 app.use(express.static(path.join(__dirname, '/public/images/')));
@@ -26,18 +33,32 @@ app.use(session({
     saveUninitialized: false,
     secret: process.env.SESSION_SECRET,
     cookie: {
-        maxAge: 1000 * 60 * 60,
+        maxAge: 1000 * 60 * 60 * 24,
         sameSite: true
     }
 }));
 
+
 // rute
 app.use('/proizvodi', proizvodRoutes);
 app.use('/korisnici', korisnikRoutes);
+app.use('/porudzbine', porudzbineRoutes)
+app.use('/auth', authRoutes);
+app.use('/admin', adminRoutes);
+app.use('/', indexRoutes);
+
+//cors
+
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}));
+
 
 /*
-app.get('/', (req, res) => {
-    res.render('');
+app.get('/', (req, res) => { // staviti niz mogucih opcija koje vode ka home page regex
+    
+    res.render('index', {naslov: ''});
 });
 */
 app.get('/about', (req, res) => {
@@ -45,12 +66,23 @@ app.get('/about', (req, res) => {
     res.sendFile('./views/about.html', { root: __dirname });
 });
 
+/*
 app.get('/home', (req, res) => {
     res.redirect('/');
-});
+});*/
 
 app.use((req, res) => {
     res.sendFile('./views/404.html', { root: __dirname });
 });
 
-app.listen(3000);
+app.listen(5000);
+
+
+
+
+
+
+
+
+
+

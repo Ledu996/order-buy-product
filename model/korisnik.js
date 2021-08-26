@@ -17,7 +17,7 @@ Korisnik.getAll = () => {
 Korisnik.getById = (id) => {
     // setings prikaz podataka korisnika
     return new Promise((resolve, reject) => {
-        const query = `SELECT * FROM korisnik WHERE KORISNIK_ID = ${id} `;
+        const query = `SELECT * FROM korisnik WHERE KORISNIK_ID = ${id}`;
         database.query(query, (err, result) => {
             if (err) throw err;
             resolve(result); // objekat korisnik sa datim id
@@ -25,12 +25,20 @@ Korisnik.getById = (id) => {
     })
 }
 
-
-
-Korisnik.create = (ime, email, brojTelefona, lozinka) => {
+Korisnik.getByEmail = (email) => {
     return new Promise((resolve, reject) => {
-            const query = 'INSERT INTO korisnik(IME, EMAIL, BROJ_TELEFONA, LOZINKA) VALUES ?';
-            const vrednosti = [[ime, email, brojTelefona, lozinka]];
+        const query = `SELECT * FROM korisnik WHERE EMAIL = '${email}'`;
+        database.query(query, (err, result) => {
+            if (err) throw err;
+            resolve(result); // objekat korisnik sa datim id
+        })
+    });
+}
+
+Korisnik.create = (ime, email, brojTelefona, lozinka, salt) => {
+    return new Promise((resolve, reject) => {
+            const query = 'INSERT INTO korisnik(ROLA_ID, IME, EMAIL, BROJ_TELEFONA, LOZINKA, SALT) VALUES(?)';
+            const vrednosti = [[2, ime, email, brojTelefona, lozinka, salt]];
                 database.query(query, vrednosti, (err, result) => {
                     if(err) throw err;
                     resolve(result);

@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <button>Create</button>
+<%- include('../partials/header.ejs')%>
+    <form method="PUT">
+        <input type="text" value="<%= data[0].IME%>" name = ''> 
+        <input type="text" value="<%= data[0].EMAIL%>" name = ''>
+        <input type="text" value="<%= data[0].BROJ_TELEFONA% %>" name = ''>
+        <input type="text" value="<%= data[0].LOZINKA"%> " name = ''> 
+        <button>Update</button>
     </form>
+</div>
 </body>
 </html>

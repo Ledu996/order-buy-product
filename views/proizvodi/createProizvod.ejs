@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-<div>
-    <form action="/prozvodi" method="POST">
+<%- include('../partials/adminHeader.ejs')%>
 
-        <label for="ime_proizvoda">Ime Proizvoda:</label><input type="text" name="IME" id="ime_proizvoda">
-        <select name="KATEGORIJA_ID" id="">
+<div class="opcije">
+    <button id="opcija_create">CreateProizvod</button>
+    <form method="POST" id="createProizvod_form">
+
+        <input type="text" placeholder="ime_proizvoda" name="ime" id="ime_proizvoda_create" required />
+        <select name="kategotija" id="kategorija_proizvoda">
             <option value="1">Voce</option>
             <option value="2">Povrce</option>
             <option value="3">Meso</option>
@@ -22,12 +15,15 @@
             <option value="7">Zdrava Hrana</option>
             <option value="8">Pekara</option>
         </select>
-        <textarea name="OPIS" id="" cols="30" rows="10" name="OPIS"></textarea>
-        <!--Adresa slike-->
-        <input type="text" name="CENA">
-        <button type="submit">Potvrdi</button>
-    </form><!--Ovde je API-->
-</div>    
+        <textarea name="opis" id="opis" cols="10" rows="10" name="OPIS"></textarea>
+        <input type="text" name="cena" id="cena" required />
+        <button type="submit">Submit</button>
+    </form>
+</div> 
+
+</div>
 </body>
 </html>
+
+
 

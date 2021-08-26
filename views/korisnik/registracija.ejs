@@ -1,0 +1,24 @@
+
+
+    <%- include('../partials/header.ejs') %>
+    <form method="post">
+        <input type="text" placeholder="name" name="ime" minlength="3" id="ime_forme" autocomplete="off" required />
+        <input type="email" placeholder="email" name="email" id="email_forme" autocomplete="off" required />
+        <input type="tel" placeholder="brojTelefona" name="brojTelefona"  id="telefon_forme" required />
+        <input type="password" placeholder="lozinka" name="lozinka" id="password" minlength="8" required />
+        <!--<input type="date" placeholder="Datum rodjenja" name="datumRodjenja" id="datumRodjenja" required />-->
+        <input type="text" placeholder="Grad" name="grad" id="grad" required />
+        <input type="text" placeholder="Ulica" name="ulica" id="ulica" required />
+        <input type="text" placeholder="Broj" name="broj" id="broj" required />
+        <input type="text" placeholder="Stan" name="stan" id="stan" required />
+        <button type="submit">Registruj se</button>
+    </form>
+
+    </div>
+    
+    <%- include('../partials/footer.ejs') %>
+
+</div>
+    <script src="../app.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+
+
+    <%- include('./partials/header.ejs') %>
+    <h1> Welcome Home </h1>
+    <div>
+        <h2>Najpovoljnije</h2>
+        <%produkti.forEach(produkt => { %>
+            <div>
+                <h3><%=produkt.IME%></h3>
+                <p><%=produkt.OPIS%></p>
+                <p><%=produkt.CENA%></p>
+                <button><%=dugme%></button>
+            </div>
+        <%})%>
+    </div>
+    </div>
+    <script src="app.js"></script>
+    </body>
+    </html>

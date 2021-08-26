@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-<div>
-    <form action="">
-        <label for="ime_proizvoda"></label><input type="text" name="" id="ime_proizvoda">
+<%- include('../partials/adminHeader.ejs')%>
+<div class="opcije" >
+    <button id="opcija_update">UpdateProizvod</button>
+    <form id="forma_create" method="PUT">
+        <input type="text" value="" name="" id="ime_proizvoda">
         <select name="" id="">
             <option value=""></option>
             <option value=""></option>
@@ -22,10 +14,12 @@
         </select>
         <input type="text">
         <textarea name="" id="" cols="30" rows="10"></textarea>
-        <!--Adresa slike-->
+        <input type="file">
         <input type="text">
-        <button type="submit"Submit></button>
-    </form><!--Ovde je API-->>
-</div>    
+        <button type="submit">Submit</button>
+    </form>
+</div> 
+</div>
 </body>
 </html>
+

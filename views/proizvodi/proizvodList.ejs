@@ -1,20 +1,48 @@
 
-    
-<% proizvodi.forEach((currentValue) => { %>
-    <div class="kategorija_box" id="Kategorija"><!--Ovde nastupa baza (id kategorije)-->
-        <div class="box" id="proizvod_<%= currentValue.PROIZVOD_ID %>" >
-            <h2>Kategorija</h2><!--Ovde nastupa baza (ime kategorije) -->
-            <span> <%= currentValue.IME %> </span>
-            <img src="#" alt="proizvod">
-            <p style="font-weight: bold; font-size: 14px"> <%= currentValue.OPIS %> </p>
-            <p class="cena"> <%= currentValue.CENA %> </p>
-            <div class="crtica"></div>
-            <button>Poruci</button>
-        </div>
+   <%- include('../partials/header.ejs')%>
+
+    <div class="content-box" style="background-color: #000;">
+    <div class='content-item' id="lista-item">
+        <ul>
+            <li>Voce</li>
+            <li>Povrce</li>
+            <li>Meso</li>
+            <li>Riba</li>
+            <li>Grickalice</li>
+            <li>Cokolade</li>
+            <li>Pica</li>
+            <li>Zdrava Hrana</li>
+            <li>Pekara</li>
+        </ul>
+    <div class="content-item" id="proizvodi_box" style="width: 50%;">
+    <%#const nizImenaKategorija = [null, 'Voce', 'Povrce', 'Meso', 'Riba', 'Grickalice', 'Cokolade', 'Pica', 'Zdrava Hrana', 'Pekara']%>
+   <%for(let i = 1, j = 0; i < mapaProizvoda.size + 1; i++, j++){ %>
+            <div style="border: 1px solid #fff;">
+            <h2 style="color: #fff;"> <%= nizImenaKategorija[j] %> </h2>
+             <%mapaProizvoda.get(i).forEach(proizvod => {%>
+                 <div class='proizvodi' id='proizvod_<%=proizvod.PROIZVOD_ID%>' style="display: inline-block; border: 1px solid #fff; ; width: 150px; ">
+                    <p><%= proizvod.IME%></p>
+                    <p><%= proizvod.OPIS%></p>
+                    <p><%= proizvod.CENA%></p>
+                    <button style="background-color: antiquewhite; color: #000"><a href="/proizvodi?id=2">Prijava</a></button>
+                </div>
+             <%})%>
+            </div>
+   <%}%>
+</div>
+
+    <div id="certain_product-box">
+        <ul id="lista_Novih_Proizvoda"> 
+
+        </ul>
     </div>
-<%})%>
-
-
+</div>
+</div>
+    <script src="../userService.js"></script>
+    <script src="../app.js"></script>
+    
+</body>
+</html>
 
 
 

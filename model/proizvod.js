@@ -12,8 +12,17 @@ Proizvod.getAll = () => {
     });
 };
 
+Proizvod.getKategorijaId = (id) => {
+    return new Promise((resolve, reject) => {
+        const query = `SELECT * FROM proizvod WHERE KATEGORIJA_ID = ${id} `;
+        connection.query(query, (err, result) => {
+            if(err) throw err;
+            resolve(result);
+        })
+    })
+}
+
 Proizvod.getById = (id) => {
-    console.log('id promisa: ' + id);
     return new Promise((resolve, reject) => {
         const query = `SELECT * FROM proizvod WHERE PROIZVOD_ID	 = ${id} `;
         connection.query(query, (err, result) => {
@@ -36,7 +45,7 @@ Proizvod.search = (search) => {
 
 Proizvod.create = (kategorijaId, ime, opis, adresaSlike, cena) => {
     return new Promise((resolve, reject) => {
-        const query = "INSERT INTO proizvod(KATEGORIJA_ID, IME, OPIS, ADRESA_SLIKE, CENA) VALUES ?";
+        const query = "INSERT INTO proizvod(KATEGORIJA_ID, IME, OPIS, ADRESA_SLIKE, CENA) VALUES (?)";
         const vrednosti = [[ kategorijaId, ime, opis, adresaSlike, cena ]];
         connection.query(query, [vrednosti], (err, result) => {
             if (err) throw err;
@@ -65,5 +74,17 @@ Proizvod.delete = (id) => {
         });
     });
 };
+
+
+Proizvod.randomFiveProducts = () => {
+    return new Promise((resolve, reject) => {
+        const query = 'SELECT * FROM proizvod WHERE CENA > 100 && CENA < 170 ORDER BY CENA DESC LIMIT 5';
+        connection.query(query, (err, result) => {
+            if(err) throw err;
+            resolve(result);
+        })
+    })
+}
+
 
 module.exports = Proizvod;
